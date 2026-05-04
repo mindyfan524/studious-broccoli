@@ -1,0 +1,973 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>范开凤 | 销售与市场营销</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: -apple-system, "Segoe UI", "Microsoft YaHei", sans-serif;
+      color: #1e293b;
+      background: #fafafa;
+      line-height: 1.6;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    /* ========== 导航栏 ========== */
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 14px 48px;
+      background: #fff;
+      box-shadow: 0 1px 4px rgba(0,0,0,0.06);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    .navbar .logo {
+      font-size: 18px;
+      font-weight: 700;
+      color: #0f172a;
+    }
+
+    .navbar .logo span {
+      color: #dc2626;
+    }
+
+    .navbar .nav-links {
+      display: flex;
+      gap: 28px;
+      list-style: none;
+    }
+
+    .navbar .nav-links a {
+      font-size: 14px;
+      color: #64748b;
+      font-weight: 500;
+      transition: color 0.2s;
+    }
+
+    .navbar .nav-links a:hover {
+      color: #dc2626;
+    }
+
+    /* ========== Hero ========== */
+    .hero {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 60px;
+      min-height: 85vh;
+      padding: 80px 48px;
+      max-width: 1040px;
+      margin: 0 auto;
+    }
+
+    .hero-text {
+      flex: 1;
+    }
+
+    .hero-text .tag {
+      display: inline-block;
+      padding: 4px 14px;
+      background: #fef2f2;
+      color: #dc2626;
+      border-radius: 20px;
+      font-size: 13px;
+      font-weight: 600;
+      margin-bottom: 16px;
+    }
+
+    .hero-text h1 {
+      font-size: 44px;
+      font-weight: 800;
+      line-height: 1.2;
+      margin-bottom: 8px;
+      color: #0f172a;
+    }
+
+    .hero-text h1 span {
+      color: #dc2626;
+    }
+
+    .hero-text .role {
+      font-size: 20px;
+      color: #475569;
+      margin-bottom: 20px;
+      font-weight: 500;
+    }
+
+    .hero-text .intro {
+      font-size: 15px;
+      color: #64748b;
+      line-height: 1.8;
+      margin-bottom: 28px;
+      max-width: 460px;
+    }
+
+    .hero-text .btn-group {
+      display: flex;
+      gap: 14px;
+    }
+
+    .btn-primary {
+      padding: 12px 28px;
+      background: #dc2626;
+      color: #fff;
+      border: none;
+      border-radius: 8px;
+      font-size: 15px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background 0.2s, transform 0.2s;
+    }
+
+    .btn-primary:hover {
+      background: #b91c1c;
+      transform: translateY(-1px);
+    }
+
+    .btn-outline {
+      padding: 12px 28px;
+      background: #fff;
+      color: #0f172a;
+      border: 1.5px solid #e2e8f0;
+      border-radius: 8px;
+      font-size: 15px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: border-color 0.2s, transform 0.2s;
+    }
+
+    .btn-outline:hover {
+      border-color: #dc2626;
+      color: #dc2626;
+      transform: translateY(-1px);
+    }
+
+    .hero-visual {
+      flex: 0 0 280px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 24px;
+    }
+
+    .avatar-ring {
+      width: 180px;
+      height: 180px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, #dc2626, #f87171);
+      padding: 4px;
+    }
+
+    .avatar-ring .avatar-inner {
+      width: 100%;
+      height: 100%;
+      border-radius: 50%;
+      background: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 64px;
+      overflow: hidden;
+    }
+
+    .avatar-ring .avatar-inner img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .quick-info {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      font-size: 13px;
+      color: #64748b;
+    }
+
+    .quick-info span {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    /* ========== 数据亮点条 ========== */
+    .stats-bar {
+      background: #0f172a;
+      padding: 40px 48px;
+    }
+
+    .stats-bar-inner {
+      display: flex;
+      justify-content: center;
+      gap: 60px;
+      max-width: 1040px;
+      margin: 0 auto;
+      flex-wrap: wrap;
+    }
+
+    .stat-item {
+      text-align: center;
+    }
+
+    .stat-item .number {
+      font-size: 32px;
+      font-weight: 800;
+      color: #fff;
+    }
+
+    .stat-item .number span {
+      color: #f87171;
+    }
+
+    .stat-item .label {
+      font-size: 13px;
+      color: #94a3b8;
+      margin-top: 4px;
+    }
+
+    /* ========== 通用 Section ========== */
+    .section {
+      padding: 80px 48px;
+      max-width: 1040px;
+      margin: 0 auto;
+    }
+
+    .section-label {
+      display: inline-block;
+      padding: 4px 12px;
+      background: #fef2f2;
+      color: #dc2626;
+      border-radius: 4px;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      margin-bottom: 12px;
+    }
+
+    .section h2 {
+      font-size: 28px;
+      font-weight: 800;
+      margin-bottom: 8px;
+      color: #0f172a;
+    }
+
+    .section .section-desc {
+      color: #64748b;
+      margin-bottom: 48px;
+      font-size: 15px;
+    }
+
+    /* ========== 工作经历 ========== */
+    .timeline {
+      position: relative;
+      padding-left: 28px;
+    }
+
+    .timeline::before {
+      content: '';
+      position: absolute;
+      left: 5px;
+      top: 8px;
+      bottom: 8px;
+      width: 2px;
+      background: #e2e8f0;
+    }
+
+    .timeline-item {
+      position: relative;
+      margin-bottom: 40px;
+    }
+
+    .timeline-item::before {
+      content: '';
+      position: absolute;
+      left: -27px;
+      top: 8px;
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      background: #dc2626;
+      border: 2px solid #fff;
+      box-shadow: 0 0 0 2px #fecaca;
+    }
+
+    .timeline-item .time {
+      font-size: 13px;
+      color: #dc2626;
+      font-weight: 600;
+      margin-bottom: 4px;
+    }
+
+    .timeline-item h3 {
+      font-size: 17px;
+      font-weight: 700;
+      color: #0f172a;
+      margin-bottom: 2px;
+    }
+
+    .timeline-item .company {
+      font-size: 14px;
+      color: #64748b;
+      margin-bottom: 12px;
+    }
+
+    .timeline-item ul {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .timeline-item li {
+      font-size: 14px;
+      color: #475569;
+      line-height: 1.7;
+      padding-left: 16px;
+      position: relative;
+    }
+
+    .timeline-item li::before {
+      content: '▸';
+      position: absolute;
+      left: 0;
+      color: #dc2626;
+    }
+
+    .timeline-item .highlight {
+      display: inline-block;
+      padding: 1px 8px;
+      background: #fef2f2;
+      color: #dc2626;
+      border-radius: 4px;
+      font-weight: 600;
+      font-size: 13px;
+    }
+
+    /* ========== 核心能力 ========== */
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 20px;
+    }
+
+    .skill-card {
+      background: #fff;
+      border-radius: 12px;
+      padding: 28px;
+      box-shadow: 0 1px 8px rgba(0,0,0,0.04);
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+
+    .skill-card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 6px 20px rgba(0,0,0,0.08);
+    }
+
+    .skill-card .icon {
+      font-size: 28px;
+      margin-bottom: 12px;
+    }
+
+    .skill-card h3 {
+      font-size: 16px;
+      font-weight: 700;
+      margin-bottom: 8px;
+      color: #0f172a;
+    }
+
+    .skill-card p {
+      font-size: 13px;
+      color: #64748b;
+      line-height: 1.7;
+    }
+
+    .skill-card .tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-top: 12px;
+    }
+
+    .skill-card .tags span {
+      padding: 3px 10px;
+      background: #f1f5f9;
+      color: #475569;
+      border-radius: 4px;
+      font-size: 12px;
+    }
+
+    /* ========== 教育背景 ========== */
+    .edu-cards {
+      display: flex;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    .edu-card {
+      flex: 1;
+      min-width: 260px;
+      background: #fff;
+      border-radius: 12px;
+      padding: 28px;
+      box-shadow: 0 1px 8px rgba(0,0,0,0.04);
+      border-left: 4px solid #dc2626;
+    }
+
+    .edu-card .time {
+      font-size: 13px;
+      color: #dc2626;
+      font-weight: 600;
+      margin-bottom: 8px;
+    }
+
+    .edu-card h3 {
+      font-size: 17px;
+      font-weight: 700;
+      color: #0f172a;
+      margin-bottom: 4px;
+    }
+
+    .edu-card .school {
+      font-size: 14px;
+      color: #64748b;
+    }
+
+    .edu-card .detail {
+      font-size: 13px;
+      color: #94a3b8;
+      margin-top: 8px;
+    }
+
+    /* ========== 联系我 ========== */
+    .contact-section {
+      background: #0f172a;
+      padding: 80px 48px;
+    }
+
+    .contact-inner {
+      max-width: 1040px;
+      margin: 0 auto;
+      display: flex;
+      gap: 60px;
+      align-items: flex-start;
+    }
+
+    .contact-info {
+      flex: 1;
+    }
+
+    .contact-info h2 {
+      font-size: 28px;
+      font-weight: 800;
+      color: #fff;
+      margin-bottom: 12px;
+    }
+
+    .contact-info p {
+      font-size: 15px;
+      color: #94a3b8;
+      margin-bottom: 32px;
+      line-height: 1.7;
+    }
+
+    .contact-links {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    .contact-links .link-item {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      color: #e2e8f0;
+      font-size: 15px;
+    }
+
+    .contact-links .link-icon {
+      width: 40px;
+      height: 40px;
+      background: #1e293b;
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 18px;
+    }
+
+    .contact-form-box {
+      flex: 1;
+      background: #1e293b;
+      border-radius: 12px;
+      padding: 32px;
+    }
+
+    .contact-form-box form {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+
+    .contact-form-box input,
+    .contact-form-box textarea {
+      padding: 12px 16px;
+      border: 1px solid #334155;
+      border-radius: 8px;
+      font-size: 14px;
+      font-family: inherit;
+      background: #0f172a;
+      color: #e2e8f0;
+      outline: none;
+      transition: border-color 0.2s;
+    }
+
+    .contact-form-box input:focus,
+    .contact-form-box textarea:focus {
+      border-color: #dc2626;
+    }
+
+    .contact-form-box textarea {
+      resize: vertical;
+      min-height: 80px;
+    }
+
+    .contact-form-box button {
+      padding: 12px 28px;
+      background: #dc2626;
+      color: #fff;
+      border: none;
+      border-radius: 8px;
+      font-size: 15px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+
+    .contact-form-box button:hover {
+      background: #b91c1c;
+    }
+
+    /* ========== 页脚 ========== */
+    .footer {
+      background: #0f172a;
+      padding: 24px 48px;
+      border-top: 1px solid #1e293b;
+      text-align: center;
+      color: #475569;
+      font-size: 13px;
+    }
+/* ========== 爱好与探索 ========== */
+.hobbies-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 20px;
+}
+
+.hobby-card {
+  background: #fff;
+  border-radius: 12px;
+  padding: 32px 24px;
+  text-align: center;
+  box-shadow: 0 1px 8px rgba(0,0,0,0.04);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.hobby-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 20px rgba(0,0,0,0.08);
+}
+
+.hobby-card .hobby-icon {
+  font-size: 40px;
+  margin-bottom: 16px;
+}
+
+.hobby-card h3 {
+  font-size: 16px;
+  font-weight: 700;
+  color: #0f172a;
+  margin-bottom: 10px;
+}
+
+.hobby-card p {
+  font-size: 13px;
+  color: #64748b;
+  line-height: 1.7;
+}
+/* ========== 爱好与探索 ========== */
+.hobbies-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 20px;
+}
+
+.hobby-card {
+  background: #fff;
+  border-radius: 12px;
+  padding: 32px 24px;
+  text-align: center;
+  box-shadow: 0 1px 8px rgba(0,0,0,0.04);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.hobby-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 20px rgba(0,0,0,0.08);
+}
+
+.hobby-card .hobby-icon {
+  font-size: 40px;
+  margin-bottom: 16px;
+}
+
+.hobby-card h3 {
+  font-size: 16px;
+  font-weight: 700;
+  color: #0f172a;
+  margin-bottom: 10px;
+}
+
+.hobby-card p {
+  font-size: 13px;
+  color: #64748b;
+  line-height: 1.7;
+}
+
+    /* ========== 响应式 ========== */
+    @media (max-width: 768px) {
+      .hero {
+        flex-direction: column-reverse;
+        text-align: center;
+        gap: 32px;
+        padding: 48px 20px;
+      }
+      .hero-text h1 {
+        font-size: 30px;
+      }
+      .hero-text .intro {
+        max-width: 100%;
+      }
+      .hero-text .btn-group {
+        justify-content: center;
+      }
+      .navbar {
+        padding: 12px 20px;
+      }
+      .section {
+        padding: 48px 20px;
+      }
+      .contact-inner {
+        flex-direction: column;
+      }
+      .stats-bar-inner {
+        gap: 28px;
+      }
+      .stat-item .number {
+        font-size: 24px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ====== 导航栏 ====== -->
+  <nav class="navbar">
+    <div class="logo">范开凤<span>.</span></div>
+    <ul class="nav-links">
+      <li><a href="#experience">工作经历</a></li>
+      <li><a href="#skills">核心能力</a></li>
+      <li><a href="#education">教育背景</a></li>
+      <li><a href="#hobbies">爱好与探索</a></li>
+      <li><a href="#contact">联系我</a></li>
+    </ul>
+  </nav>
+
+  <!-- ====== Hero ====== -->
+  <section class="hero">
+    <div class="hero-text">
+      <span class="tag">Hi，欢迎来到我的思想游乐场</span>
+      <h1>你好，我是<span>Mind船长</span></h1>
+      <p class="role">大客户销售 · 商务BD · 市场营销</p>
+      <p class="intro">
+        西北大学新传硕 | 销售/市场/运营“三门抱”实践者<br>
+        教培销售季度冠军选手 + 大厂和外企市场营销实习 + 半亩花田新媒体运营经验<br>   
+        懂业务？会运营？做市场？不如看看我<br>
+        </p>
+      <div class="btn-group">
+        <button class="btn-primary" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">联系我</button>
+        <button class="btn-outline" onclick="document.getElementById('experience').scrollIntoView({behavior:'smooth'})">查看经历</button>
+      </div>
+    </div>
+    <div class="hero-visual">
+      <div class="avatar-ring">
+        <div class="avatar-inner">
+          <img src="/Users/meme/网页/证件照.jpg" alt="范开凤">
+        </div>
+      </div>
+      <div class="quick-info">
+        <span>📍 西北大学在读 · base北上广深</span>
+        <span>📧 2101685950@qq.com</span>
+        <span>📱 18865572192</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ====== 数据亮点 ====== -->
+  <div class="stats-bar">
+    <div class="stats-bar-inner">
+      <div class="stat-item">
+        <div class="number">2000<span>+</span></div>
+        <div class="label">电话沟通客户</div>
+      </div>
+      <div class="stat-item">
+        <div class="number">参与1000<span>+</span></div>
+        <div class="label">组织AI培训活动</div>
+      </div>
+      <div class="stat-item">
+        <div class="number">TOP<span>1</span></div>
+        <div class="label">教培季度销售业绩</div>
+      </div>
+      <div class="stat-item">
+        <div class="number">项目申报<span>4项</span></div>
+        <div class="label">品牌认证获批</div>
+      </div>
+      <div class="stat-item">
+        <div class="number">6篇<span>+</span></div>
+        <div class="label">月均产出千赞作品</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ====== 工作经历 ====== -->
+  <section class="section" id="experience">
+    <span class="section-label">EXPERIENCE</span>
+    <h2>工作经历</h2>
+    <p class="section-desc">从运营、销售到市场营销，拥抱AI，持续拓展能力边界</p>
+
+    <div class="timeline">
+      <!-- 猿辅导 PR -->
+      <div class="timeline-item">
+        <div class="time">2025.11 – 2026.04</div>
+        <h3>策划运营实习生 · 公共关系部</h3>
+        <div class="company">猿辅导</div>
+        <ul>
+          <li>负责【猿辅导创新教育研究院】公众号<span class="highlight">从0到1</span>搭建与运营，产出5篇原创内容，获得<span class="highlight">1万+阅读量</span></li>
+          <li>主导3项重点活动（剑桥英语考试、北师大联合培训、北大AI培训）全流程运营，建立标准化活动SOP，累计参与<span class="highlight">1000余人</span></li>
+          <li>主导金灵光杯等12项品牌荣誉申报与认证，<span class="highlight">全部获批</span>，显著增强品牌市场竞争力</li>
+          <li>策划猿辅导×钙尔奇跨界合作方案，监测转化数据，实现用户转化率<span class="highlight">1%</span>目标</li>
+        </ul>
+      </div>
+
+      <!-- 艾默生 -->
+      <div class="timeline-item">
+        <div class="time">2025.06 – 2025.11</div>
+        <h3>市场营销实习生 · 市场部</h3>
+        <div class="company">艾默生科技资源（西安）有限公司 · 外企</div>
+        <ul>
+          <li>为25年度全国路演提供物料支持，设计落地页模版，跟进<span class="highlight">20+</span>站点海报及页面细化</li>
+          <li>开展线上问卷调研，分析用户反馈与数据，整理销售线索并传达至销售团队，支持业务转化</li>
+          <li>协助25年度校招线上宣传，搭建线上会议直播流程，协调多部门推进项目进度</li>
+        </ul>
+      </div>
+
+      <!-- 猿辅导 销售 -->
+      <div class="timeline-item">
+        <div class="time">2024.04 – 2024.08</div>
+        <h3>课程销售 · 小学阶段</h3>
+        <div class="company">猿辅导（济南）</div>
+        <ul>
+          <li>亲自电话沟通约<span class="highlight">2000名</span>潜在客户，建立并运营11个微信社群</li>
+          <li>通过用户分层运营与话术优化，达成<span class="highlight">业务组季度第一</span>（业务组100+人）</li>
+          <li>总结优化社群运营SOP，用于新人培训与团队复制，帮助团队业绩稳定至<span class="highlight">业务组前三</span>（9个小组）</li>
+        </ul>
+      </div>
+
+      <!-- 半亩花田 -->
+      <div class="timeline-item">
+        <div class="time">2023.03 – 2023.07</div>
+        <h3>小红书内容运营实习生</h3>
+        <div class="company">半亩花田（济南总部）</div>
+        <ul>
+          <li>基于千瓜等数据平台监测竞品内容，输出季度竞品分析报告</li>
+          <li>独立完成选题到数据复盘的内容闭环，月均产出千赞内容<span class="highlight">10+</span>篇，万赞内容<span class="highlight">4+</span>篇</li>
+          <li>通过评论区与私信互动引导，优化账号互动率与用户反馈质量</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- ====== 核心能力 ====== -->
+  <section class="section" id="skills">
+    <span class="section-label">SKILLS</span>
+    <h2>核心能力</h2>
+    <p class="section-desc">销售与市场双轮驱动，数据与内容两手兼备</p>
+
+    <div class="skills-grid">
+      <div class="skill-card">
+        <div class="icon">🎯</div>
+        <h3>爱社交的销售达人</h3>
+        <p>2000+客户电话沟通实战经验，擅长用户分层运营与精准话术，季度业绩组内第一</p>
+        <div class="tags">
+          <span>客户沟通</span>
+          <span>社群运营</span>
+          <span>话术优化</span>
+        </div>
+      </div>
+      <div class="skill-card">
+        <div class="icon">📊</div>
+        <h3>市场策划与运营</h3>
+        <p>主导4项品牌认证申报全部获批，策划并执行多场千人规模活动，建立标准化活动SOP</p>
+        <div class="tags">
+          <span>竞品分析</span>
+          <span>活动策划</span>
+          <span>SOP搭建</span>
+        </div>
+      </div>
+      <div class="skill-card">
+        <div class="icon">🤝</div>
+        <h3>商务BD与合作</h3>
+        <p>猿辅导×钙尔奇跨界合作实操经验，外企路演20+站点物料与数据支持，跨部门协调能力</p>
+        <div class="tags">
+          <span>异业合作</span>
+          <span>商务对接</span>
+          <span>跨部门协调</span>
+        </div>
+      </div>
+      <div class="skill-card">
+        <div class="icon">✍️</div>
+        <h3>内容运营</h3>
+        <p>公众号从0到1搭建，小红书月均万赞内容4+篇，教培与美妆内容运营经验</p>
+        <div class="tags">
+          <span>公众号运营</span>
+          <span>小红书</span>
+          <span>文案撰写</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ====== 教育背景 ====== -->
+  <section class="section" id="education">
+    <span class="section-label">EDUCATION</span>
+    <h2>教育背景</h2>
+    <p class="section-desc">211硕士 + 省重点本科，新闻传播与广播电视的双重积累</p>
+
+    <div class="edu-cards">
+      <div class="edu-card">
+        <div class="time">2024.09 – 至今</div>
+        <h3>西北大学 · 211</h3>
+        <div class="school">新闻与传播 · 硕士</div>
+        <div class="detail">研究方向：青年群体、新闻消费、质性访谈</div>
+      </div>
+      <div class="edu-card">
+        <div class="time">2019.09 – 2023.06</div>
+        <h3>济南大学 · 省重点本科</h3>
+        <div class="school">广播电视学 · 本科</div>
+        <div class="detail">GPA：4.3/5（前35%）</div>
+      </div>
+    </div>
+  </section>
+  
+<!-- ====== 爱好与探索 ====== -->
+<section class="section" id="hobbies">
+  <span class="section-label">LIFESTYLE</span>
+  <h2>爱好与探索</h2>
+  <p class="section-desc">工作之外的另一面，同样充满热情</p>
+
+  <div class="hobbies-grid">
+    <div class="hobby-card">
+      <div class="hobby-icon">🏋️</div>
+      <h3>健身</h3>
+      <p>坚持规律训练，相信强健的体魄是应对高压工作的基础。力量与耐力，身体和心理一起成长。</p>
+    </div>
+    <div class="hobby-card">
+      <div class="hobby-icon">📷</div>
+      <h3>摄影</h3>
+      <p>从微电影导演到日常纪实，用镜头捕捉故事。曾凭《我在他乡挺好的》获中国梦青年影像盛典三等奖。</p>
+    </div>
+    <div class="hobby-card">
+      <div class="hobby-icon">🎬</div>
+      <h3>微电影创作</h3>
+      <p>担任导演与摄像，组织团队完成从剧本到成片的全流程。两部作品获国家级影像赛事三等奖。</p>
+    </div>
+    <div class="hobby-card">
+      <div class="hobby-icon">🤖</div>
+      <h3>AI 探索</h3>
+      <p>持续关注并实践国内主流AI及ChatGPT、Gemini、Cursor等工具，探索AI赋能营销与销售的可能性。</p>
+    </div>
+  </div>
+</section>
+
+  <!-- ====== 联系我 ====== -->
+  <section class="contact-section" id="contact">
+    <div class="contact-inner">
+      <div class="contact-info">
+        <h2>与我联系</h2>
+        <p>如果你正在寻找一位既有销售业绩、又懂市场运营的候选人，欢迎随时联系我。一周内可到岗，可实习6个月。</p>
+        <div class="contact-links">
+          <div class="link-item">
+            <div class="link-icon">📧</div>
+            <span>2101685950@qq.com</span>
+          </div>
+          <div class="link-item">
+            <div class="link-icon">📱</div>
+            <span>18865572192</span>
+          </div>
+          <div class="link-item">
+            <div class="link-icon">📍</div>
+            <span>西安 · 西北大学</span>
+          </div>
+        </div>
+      </div>
+      <div class="contact-form-box">
+        <form onsubmit="handleSubmit(event)">
+          <input type="text" placeholder="您的姓名" required>
+          <input type="email" placeholder="您的邮箱" required>
+          <input type="text" placeholder="公司 / 职位">
+          <textarea placeholder="想和我说些什么..." required></textarea>
+          <button type="submit">发送消息</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- ====== 页脚 ====== -->
+  <footer class="footer">
+    <p>&copy; 2026 范开凤. All rights reserved.</p>
+  </footer>
+
+  <script>
+    function handleSubmit(e) {
+      e.preventDefault();
+      alert('感谢您的留言！我会尽快回复。');
+      e.target.reset();
+    }
+
+    window.addEventListener('scroll', () => {
+      const navbar = document.querySelector('.navbar');
+      if (window.scrollY > 10) {
+        navbar.style.boxShadow = '0 2px 12px rgba(0,0,0,0.1)';
+      } else {
+        navbar.style.boxShadow = '0 1px 4px rgba(0,0,0,0.06)';
+      }
+    });
+  </script>
+
+</body>
+</html>
